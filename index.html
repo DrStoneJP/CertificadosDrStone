@@ -1,40 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certificado de Joya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant&family=The+Seasons&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .font-cinzel { font-family: 'Cinzel', serif; }
-    .font-seasons { font-family: 'The Seasons', serif; }
-    .font-cormorant { font-family: 'Cormorant', serif; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dr. Stone Exotic Jewelry - Certificado</title>
+
+<!-- Tipografías -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=The+Seasons&family=Cormorant:wght@300;400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --verde-bosque: #1a3d2f;
+    --grafito: #2e2e2e;
+    --plata: #c0c0c0;
+    --bronce-antiguo: #7c6b5a;
+    --verde-suave: #aec9b1;
+    --sombra-suave: rgba(26,61,47,0.15);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Cormorant', serif;
+    background: #f3f6f4;
+    color: var(--grafito);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: var(--verde-bosque);
+    color: white;
+    gap: 1rem;
+  }
+
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+
+  header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  header h2 {
+    font-family: 'The Seasons', serif;
+    font-size: 1rem;
+    margin: 0;
+    color: var(--plata);
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    min-height: 90vh;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .video-section {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--sombra-suave);
+  }
+
+  .video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info-tabs {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--sombra-suave);
+    overflow: hidden;
+  }
+
+  .tab-buttons {
+    display: flex;
+    background: var(--verde-suave);
+  }
+
+  .tab-buttons button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: none;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .tab-buttons button:hover,
+  .tab-buttons button.active {
+    background: var(--bronce-antiguo);
+    color: white;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 1.5rem;
+    font-family: 'Cormorant', serif;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background: #eaeaea;
+    font-weight: bold;
+  }
+</style>
 </head>
-<body class="bg-white text-gray-800 px-6 py-10 font-cormorant">
-  <div class="max-w-4xl mx-auto">
-    <h1 class="text-5xl font-cinzel mb-2 text-center text-gray-900">Certificado de Autenticidad</h1>
-    <h2 class="text-2xl font-seasons text-center text-gray-600 mb-8">Joya única y eterna</h2>
+<body>
 
-    <section class="bg-gray-50 p-6 rounded-xl shadow-lg transition hover:shadow-2xl">
-      <h3 class="text-xl font-semibold mb-2">Información de la Joya</h3>
-      <p><strong>Nombre:</strong> Esmeralda del Alba</p>
-      <p><strong>Peso:</strong> 2.5 quilates</p>
-      <p><strong>Pureza:</strong> VS1</p>
-      <p><strong>Origen:</strong> Muzo, Colombia</p>
-    </section>
-
-    <section class="mt-8 bg-gray-50 p-6 rounded-xl shadow-lg transition hover:shadow-2xl">
-      <h3 class="text-xl font-semibold mb-2">Certificación</h3>
-      <p>
-        Esta joya ha sido certificada por [Tu Nombre o Empresa] y ha pasado por estrictos controles de calidad en cuanto a autenticidad, origen, y procesos de engaste.
-      </p>
-    </section>
-
-    <footer class="mt-10 text-center text-sm text-gray-500">
-      Código de verificación: <code class="bg-gray-100 px-2 py-1 rounded">XYZ123456789</code>
-    </footer>
+<header>
+  <img src="logo.png" alt="Logo Dr. Stone">
+  <div>
+    <h1>Dr. Stone</h1>
+    <h2>Exotic Jewelry</h2>
   </div>
+</header>
+
+<div class="container">
+  <div class="video-section">
+    <video controls poster="poster.jpg">
+      <source src="trapi.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <div class="info-tabs">
+    <div class="tab-buttons">
+      <button class="active" onclick="showTab(0)">Características</button>
+      <button onclick="showTab(1)">Datos</button>
+      <button onclick="showTab(2)">Firma</button>
+    </div>
+    <div class="tab-content active">
+      <p><strong>Tipo de joya:</strong> Dije de corazón</p>
+      <p><strong>Material:</strong> Oro puro 24k</p>
+      <p><strong>Peso:</strong> 3.65 g</p>
+      <p><strong>Gema:</strong> Esmeralda trapiche, 3.95 ct</p>
+    </div>
+    <div class="tab-content">
+      <p><strong>Espectrometría:</strong></p>
+      <img src="espectro aro.jpg" alt="Espectrometría">
+      <p><strong>Número de serie:</strong> 20250204</p>
+      <p><strong>Diseño:</strong> Dije de sol</p>
+    </div>
+    <div class="tab-content">
+      <img src="Firma Juanda.jpg" alt="Firma del gerente" style="max-width: 150px;">
+      <p><strong>Juan David Perdomo</strong><br>Gerente General</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  &copy; 2025 Dr. Stone Exotic Jewelry
+</footer>
+
+<script>
+function showTab(index) {
+  const tabs = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab-buttons button');
+  tabs.forEach(t => t.classList.remove('active'));
+  buttons.forEach(b => b.classList.remove('active'));
+  tabs[index].classList.add('active');
+  buttons[index].classList.add('active');
+}
+</script>
+
 </body>
 </html>
